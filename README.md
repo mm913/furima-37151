@@ -10,7 +10,7 @@
 |email                          |string  |null: false, unique: true |
 |encrypted_password             |string  |null: false               |
 |nickname                       |string  |null: false               |
-|birthday                       |data    |null: false               |
+|birthday                       |date    |null: false               |
 
 ### Association
 - has_many :items
@@ -56,15 +56,15 @@
 
 ## deliveriesテーブル
 
-|Column        |Type       |Options                         |
-|--------------|-----------|--------------------------------|
-|post_code     |string     |null: false                     |
-|address_id    |string     |null: false                     |
-|address_1     |string     |null: false                     |
-|address_2     |string     |null: false                     |
-|building      |string     |                                |
-|tel           |string     |null: false                     |
-|shopping      |references |null: false, foreign_key: true  |
+|Column         |Type       |Options                         |
+|---------------|-----------|--------------------------------|
+|post_code      |string     |null: false                     |
+|address_id     |integer    |null: false                     |memo: ActiveHash
+|municipalities |string     |null: false                     |
+|house_number   |string     |null: false                     |
+|building       |string     |                                |
+|tel            |string     |null: false                     |
+|shopping       |references |null: false, foreign_key: true  |
 
 ### Association
 - belongs_to :shopping

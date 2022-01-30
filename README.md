@@ -22,13 +22,13 @@
 
 |Column             |Type        |Options                        |
 |-------------------|------------|-------------------------------|
-|item_name          |string      |null: false,40文字まで          |
-|text               |text        |null: false ,1000文字まで       |
-|category_id        |integer     |null: false ,ActiveHash        |
-|condition_id       |integer     |null: false ,ActiveHash        |
-|delivery_charge_id |integer     |null: false ,ActiveHash        |
-|delivery_from_id   |integer     |null: false ,ActiveHash        |
-|delivery_days_id   |integer     |null: false ,ActiveHash        |
+|item_name          |string      |null: false                    |memo: 40文字まで
+|detail             |text        |null: false                    |memo: 1000文字で
+|category_id        |integer     |null: false                    |memo: ActiveHash
+|condition_id       |integer     |null: false                    |memo: ActiveHash
+|delivery_charge_id |integer     |null: false                    |memo: ActiveHash
+|address_id         |integer     |null: false                    |memo: ActiveHash
+|delivery_days_id   |integer     |null: false                    |memo: ActiveHash
 |price              |integer     |null: false                    |
 |user               |references  |null: false, foreign_key: true | 
 
@@ -59,9 +59,9 @@
 |Column        |Type       |Options                         |
 |--------------|-----------|--------------------------------|
 |post_code     |string     |null: false                     |
+|address_id    |string     |null: false                     |
 |address_1     |string     |null: false                     |
 |address_2     |string     |null: false                     |
-|address_3     |string     |null: false                     |
 |building      |string     |                                |
 |tel           |string     |null: false                     |
 |shopping      |references |null: false, foreign_key: true  |

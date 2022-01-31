@@ -67,4 +67,8 @@
 |shopping       |references |null: false, foreign_key: true  |
 
 ### Association
+<<<<<<< Updated upstream
 - belongs_to :shopping
+=======
+- belongs_to :shopping
+>>>>>>> Stashed changes

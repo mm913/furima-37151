@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :delivery_charge
   belongs_to :address
   belongs_to :delivery_days
+  has_one_attached :image
 
   validates :item_name,          presence: true, length: { maximum: 40 }
   validates :detail,             presence: true, length: { maximum: 1000 }

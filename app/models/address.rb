@@ -1,4 +1,4 @@
-class Address < ActiveHash: :Base
+class Address < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '北海道' },
@@ -50,7 +50,7 @@ class Address < ActiveHash: :Base
     { id: 48, name: '沖縄県' }  
   ]
 
-    include AcriveHash::Associations
+    include ActiveHash::Associations
     has_many :items
   
   end

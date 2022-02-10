@@ -6,7 +6,7 @@ RSpec.describe Item, type: :model do
   end
 
   describe '商品の保存' do
-    context  '商品が保存できる時' do
+    context '商品が保存できる時' do
       it '商品画像、商品名、商品説明、カテゴリー、商品状態、配送料負担、発送元地域、発送までの日数、価格が入力されると保存できる' do
         expect(@item).to be_valid
       end
@@ -102,7 +102,6 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include( "Price is invalid. Input half-width characters" )
       end
-
     end
   end
 end

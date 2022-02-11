@@ -44,43 +44,43 @@ RSpec.describe Item, type: :model do
       end
 
       it '商品説明が1001文字以上だと保存できない' do
-        @item.detail = 'test' * 1001
+        @item.detail = 'test' * 1000
         @item.valid?
         expect(@item.errors.full_messages).to include( "Detail is too long (maximum is 1000 characters)" )
       end
 
       it 'カテゴリーが初期値（---）だと保存できない' do
-        @item.category = nil
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include( "Category can't be blank" )
       end
 
       it '商品状態が初期値（---）だと保存できない' do
-        @item.condition = nil
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include( "Condition can't be blank" )
       end
 
       it '配送料負担が初期値（---）だと保存できない' do
-        @item.delivery_charge = nil
+        @item.delivery_charge_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include( "Delivery charge can't be blank" )
       end
 
       it '発送元地域が初期値（---）だと保存できない' do
-        @item.address = nil
+        @item.address_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include( "Address can't be blank" )
       end
 
       it '発送までの日数が初期値（---）だと保存できない' do
-        @item.delivery_days = nil
+        @item.delivery_days_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include( "Delivery days can't be blank" )
       end
 
       it '価格が無いと保存できない' do
-        @item.price = nil
+        @item.price = ''
         @item.valid?
         expect(@item.errors.full_messages).to include( "Price can't be blank" )
       end

@@ -8,9 +8,6 @@ window.addEventListener('load', () => {
   
   commission.innerHTML = Math.floor(inputValue * 0.1);
   
-  gain.innerHTML = Math.floor(inputValue - (inputValue * 0.1));
+  gain.innerHTML = Math.floor(inputValue - commission.innerHTML );
   })
 })
-
- 
-

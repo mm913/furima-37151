@@ -14,7 +14,7 @@
 
 ### Association
 - has_many :items
-- has_many :shoppings
+- has_many :order
 
 
 
@@ -34,12 +34,12 @@
 
 ### Association
 - belongs_to :user
-- has_one :shopping
+- has_one :order
 
 
 
 
-## shoppingsテーブル
+## ordersテーブル
 
 |Column        |Type       |Options                         |
 |--------------|-----------|--------------------------------|
@@ -64,8 +64,8 @@
 |house_number   |string     |null: false                     |
 |building       |string     |                                |
 |tel            |string     |null: false                     |
-|shopping       |references |null: false, foreign_key: true  |
+|order          |references |null: false, foreign_key: true  |
 
 ### Association
-- belongs_to :shopping
+- belongs_to :order
 

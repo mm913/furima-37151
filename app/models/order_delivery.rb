@@ -1,10 +1,11 @@
 class OrderDelivery
-  attr_accessor :token
   include ActiveModel::Model
+  attr_accessor :token
   attr_accessor :post_code, :address_id, :municipalities, :house_number, 
-               :building, :tel, :order_id, :user_id, :item_id
-  
+                :building, :tel, :order_id, :user_id, :item_id
+
   with_options presence: true do
+    validates :token
     validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "input correctly"}
     validates :municipalities
     validates :house_number

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe OrderDelivery, type: :model do
-  describe '配送先情報の保存' do
+  describe '購入者情報の保存' do
     before do
       @user = FactoryBot.create(:user)
       @item = FactoryBot.create(:item)
@@ -20,6 +20,11 @@ RSpec.describe OrderDelivery, type: :model do
     end
 
     context '内容に問題がある場合' do
+      it "クレジットカード情報が空では保存できない" do
+        @order_delivery.token = nil
+        @order_delivery.valid?
+        expect(@order_delivery.errors.full_messages).to include("Token can't be blank")
+      end
       it '郵便番号が空では保存できない' do
         @order_delivery.post_code = ''
         @order_delivery.valid?

@@ -1,4 +1,5 @@
 class OrderDelivery
+  attr_accessor :token
   include ActiveModel::Model
   attr_accessor :post_code, :address_id, :municipalities, :house_number, 
                :building, :tel, :order_id, :user_id, :item_id

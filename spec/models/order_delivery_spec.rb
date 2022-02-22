@@ -41,7 +41,7 @@ RSpec.describe OrderDelivery, type: :model do
         expect(@order_delivery.errors.full_messages).to include("Post code input correctly")
       end
       it '都道府県が初期値(---)では保存できない' do
-        @order_delivery.address_id = ''
+        @order_delivery.address_id = 1
         @order_delivery.valid?
         expect(@order_delivery.errors.full_messages).to include("Address can't be blank")
       end
@@ -74,6 +74,16 @@ RSpec.describe OrderDelivery, type: :model do
         @order_delivery.tel = '012345678912'
         @order_delivery.valid?
         expect(@order_delivery.errors.full_messages).to include("Tel is too short")
+      end
+      it 'userが紐ついていなければ購入できない' do
+        @order_delivery.user_id = nil
+        @order_delivery.valid?
+        expect(@order_delivery.errors.full_messages).to include( "User can't be blank" )
+      end
+      it 'itemが紐ついていなければ購入できない' do
+        @order_delivery.item_id = nil
+        @order_delivery.valid?
+        expect(@order_delivery.errors.full_messages).to include( "Item can't be blank" )
       end
     end
   end

@@ -5,6 +5,8 @@ class OrderDelivery
                 :building, :tel, :order_id, :user_id, :item_id
 
   with_options presence: true do
+    validates :user_id
+    validates :item_id
     validates :token
     validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "input correctly"}
     validates :municipalities
